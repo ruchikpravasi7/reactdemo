@@ -25,9 +25,13 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  const expenseFormDetail=(formDetail)=>{
+    expenses.push(formDetail);
+    console.log(expenses);
+  }
   return (
     <Card className="expenses">
-      <NewExpense />
+      <NewExpense newExpenseData={expenseFormDetail}/>
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
